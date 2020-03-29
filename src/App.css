@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.oob-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
+}
+
+.oob-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.oob-header-logo {
+  background-image: url('/images/logo2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.oob-header-image {
+  background-image: url('/images/unicorn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+
+.oob-main {
+  display: flex;
+  flex: 1;
+}
+
+.oob-writer {
+  margin: .25em;
+  flex: 1;
+}
+
+.oob-writer textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.oob-display {
+  font-family: Caveat;
+  flex: 1;
+  color: #623c99;
+  font-weight: bold;
+  font-size: 22pt;
 }

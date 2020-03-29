@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import oob from './oob';
 import './App.css';
 
-function App() {
+const OobWriter = () => {
+  const [text, setText] = useState('');
+
+  const handleChange = e => {
+    let text = e.target.value;
+    setText(text.replace(/[aeiou]/ig,'oob'))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="oob-writer">
+      <div style={{color: 'red'}}>
+        {text}
+      </div>
+      <textarea onChange={handleChange} />
     </div>
-  );
+  )
+}
+
+const OobDisplay = props => {
+  return (
+    <div className="oob-display">
+      {props.text}
+      test
+    </div>
+  )
+}
+
+const App = () => {
+  return (
+    <div className="oob-container">
+    <section className="oob-header">
+      <div className="oob-header-logo" />
+      <div className="oob-header-image" />
+    </section>
+    <section className="oob-main">
+      <OobWriter />
+      <OobDisplay />
+    </section>
+    </div>
+  )
 }
 
 export default App;
