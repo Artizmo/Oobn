@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
-import oob from './oob';
+import React, { useState, useContext } from 'react';
 import './App.css';
 
-const OobWriter = () => {
+const Oob = () => {
   const [text, setText] = useState('');
 
   const handleChange = e => {
     let text = e.target.value;
-    setText(text.replace(/[aeiou]/ig,'oob'))
+    setText(text.replace(/[aeiou]/ig,'oob'));
   }
 
   return (
+    <>
+      <OobWriter handleChange={handleChange} />
+      <OobDisplay text={text} />
+    </>
+  )
+}
+
+const OobWriter = props => {
+  return (
     <div className="oob-writer">
-      <div style={{color: 'red'}}>
-        {text}
-      </div>
-      <textarea onChange={handleChange} />
+      {props.text}
+      <textarea onChange={props.handleChange} />
     </div>
   )
 }
@@ -24,7 +30,6 @@ const OobDisplay = props => {
   return (
     <div className="oob-display">
       {props.text}
-      test
     </div>
   )
 }
@@ -37,8 +42,7 @@ const App = () => {
       <div className="oob-header-image" />
     </section>
     <section className="oob-main">
-      <OobWriter />
-      <OobDisplay />
+      <Oob />
     </section>
     </div>
   )

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 .oob-container {
   position: relative;
@@ -33,25 +34,37 @@
 }
 
 .oob-main {
+  max-height: 400px;
   display: flex;
   flex: 1;
+  font-family: 'Open Sans';
+  font-size: 16pt;
 }
 
 .oob-writer {
-  margin: .25em;
+  color: black;
   flex: 1;
+  margin: .25em;
 }
 
-.oob-writer textarea {
+textarea {
+  padding: .25em;
+  font-family: 'Open Sans';
+  font-size: 16pt;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, .2);
+  border: none;
+  outline: none;
+  overflow: auto;
 }
 
 .oob-display {
-  font-family: Caveat;
+  padding: .25em;
+  background-color: rgba(0, 0, 0, .2);
+  color: black;
+  margin: .25em;
   flex: 1;
-  color: #623c99;
-  font-weight: bold;
-  font-size: 22pt;
+  overflow: auto;
 }
